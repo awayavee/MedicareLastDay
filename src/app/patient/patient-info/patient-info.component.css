@@ -1,0 +1,30 @@
+.approv{
+    background: rgba(75, 62, 62, 0.5);
+    border: 2px solid black;
+    padding:5px;
+    vertical-align: middle;
+}
+h4{
+    color:white
+}
+
+.btn{
+    border-radius: 40px;
+
+}
+
+.on{
+    color:rgb(138, 192, 11);
+    font-size:50px;
+}
+.off{
+    font-size:50px;
+    color:rgb(3, 3, 3)
+}
+
+.edit{
+    vertical-align: middle;
+    font-size: 20px;
+    color:yellow;
+ 
+}

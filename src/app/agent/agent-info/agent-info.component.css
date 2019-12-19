@@ -1,0 +1,8 @@
+.card{
+    background:rgba(12, 12, 12, 0.322)
+}
+.card-header{
+    background:rgba(22, 58, 112, 0.562);
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+}

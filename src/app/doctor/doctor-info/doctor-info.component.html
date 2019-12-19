@@ -1,0 +1,27 @@
+<div class="card testimonial-card mt-2 mb-3">
+        
+        <img class="card-img-top rounded-circle"
+            [src]="doctorImg[doctor.id%7]">
+
+        <div class="card-body">
+            <h4 class="card-title font-weight-bold">Dr. {{doctor.firstName}}</h4>
+            <hr>
+            <div class="card-text">
+                <p><i class="fas fa-quote-left"></i> An experienced doctor in the field of neurology</p>
+                <p>Medicare Service:{{doctor.medicareServices.medicareService}}</p>
+                <p>Speciality: {{doctor.speciality}}</p>
+                <p>Working Hour : {{doctor.workHours}}</p>
+                <p>Hospital Name : {{doctor.hospitalName}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a [routerLink]="['/appointment',doctor.id]">
+                <div class="btn btn-dark container-fluid">Book Appointment</div>
+            </a>
+            <a [routerLink]="['/doctorEdit',doctor.id]">
+                    <div class="btn btn-info container-fluid">Edit</div>
+                </a>
+                 
+        </div>
+
+    </div>

@@ -1,0 +1,26 @@
+<div class="row container-fluid justify-content-center">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="row  approv my-5 mx-5" *ngFor ="let appointment of appointments">
+            <div class="col-10">
+                <h4><b><u>Patient's Name: Mr. {{appointment.patientFirstName}} {{appointment.patientLastName}}</u></b></h4>
+                <h6>Medical history : abcdefgh</h6>
+                <p>Age: 26</p>
+                <p>Gender: Male</p>
+            </div>
+
+            <div class="col-2">
+                <div class="row container-fluid my-2 py-2" >
+                <div class="col-12 container-fluid" *ngIf="!appointment.status">
+                    <button class="btn btn-info float-right container-fluid" (click)="onChange(appointment)">Accept</button>
+                </div>
+                <br>
+                <div class="col-12 container-fluid my2 py-2" *ngIf="appointment.status">
+                    <button class="btn btn-danger float-right container-fluid" (click)="onChange(appointment)">Reject</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>

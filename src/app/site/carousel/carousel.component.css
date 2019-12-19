@@ -1,0 +1,53 @@
+#carousel-item{
+    height:600px;
+    width:100%;  
+}
+
+.caraousel{
+    position:relative;
+}
+
+
+.box1{
+    background: rgba(6, 0, 27, 0.5);
+    height:400px;
+    width:100%;
+    
+    color:white;
+}
+
+.box2{
+    background: rgba(6, 0, 27, 0.5);
+     height:400px;
+     width:100%;
+    
+     color:white;
+ }
+
+ .box3{
+    background: rgba(6, 0, 27, 0.5);
+    height:400px;
+     width:100%;
+    
+     color:white;
+ }
+
+ h1{
+     text-align:center;
+ }
+
+ .img1{
+     height:400px;
+     width:300px;
+  
+ }
+
+ .carousel-inner{
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+ h3{
+    text-align: center;
+ }
+
+
