@@ -1,0 +1,35 @@
+
+<div class="row container-fluid approv my-5 mx-5">
+    <div class="col-10">
+        <h4><b><u>Patient's Name: Mr.{{user.patient.firstName}} {{user.patient.lastName}} </u></b></h4>
+        <!-- <h6>Email: {{user.patient.email}}</h6> -->
+        <p>Age: {{user.patient.age}}</p>
+        <p>Gender: {{user.patient.gender}}</p>
+    </div>
+
+    <div class="col-2">
+        <div class="row container-fluid my-2 py-2">
+        <div class="col-12 container-fluid"  *ngIf="user.status">
+            <div class="btn" (click)="onChange(user)"><i class="material-icons on">
+                toggle_on
+                </i></div>
+        
+        </div>
+        <div class="col-12 container-fluid" *ngIf="!user.status">
+            <div class="btn" (click)="onChange(user)"><i class="material-icons off">
+                toggle_off
+                </i></div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row container-fluid" *ngIf="isEditAllowed()">
+    <div class="col-12">
+        <a [routerLink]="['/patientEdit',user.patient.id]"><div class="btn btn-dark container-fluid"><i class="material-icons edit">
+            edit
+            </i>Edit</div></a>
+    </div>
+</div>
+</div>
+

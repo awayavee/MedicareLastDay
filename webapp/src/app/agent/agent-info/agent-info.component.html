@@ -1,0 +1,77 @@
+<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+    <div class="row justify-content-center approv my-5">
+        <div class="col-8">
+            <div class="card">
+
+                <div class="card-header">
+                    <h4><b>Agent's Name: Mr. {{user.agent.firstName}} {{user.agent.lastName}}</b></h4>
+
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+
+                            <!-- <h6>Medical history : None</h6> -->
+                            <p>Age: {{user.agent.age}}</p>
+                            <span *ngIf="Gender() else notActive">Gender : Female</span>
+                            <ng-template #notActive>Gender : Male</ng-template>
+
+
+                            <a data-toggle="collapse" data-parent="#accordionEx" [href]="'#agent'+user.agent.id"
+                                aria-expanded="false">
+                                <h5 class="mb-0">
+                                    View More <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                            <div [id]="'agent'+user.agent.id" class="collapse" data-parent="#accordionEx">
+                                <div class="card-body">
+                                    <p>City : {{user.agent.city}}</p>
+                                    <p>State : {{user.agent.state}}</p>
+                                    <p>Zipcode : {{user.agent.zipCode}}</p>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="col-3">
+                            <div class="row container-fluid my-2 py-2">
+                                <div class="col-12 container-fluid" *ngIf="user.status">
+
+                                    <div class="btn btn-info float-right" (click)="onChange(user)">Accept</div>
+
+
+                                </div>
+
+                                <div class="col-12 container-fluid my2 py-2" *ngIf="!user.status">
+                                
+                                        <div class="btn btn-danger float-right" (click)="onChange(user)">Reject</div>
+                                
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+
+                    <div class="row container-fluid">
+
+                        <div class="col-12" *ngIf=isEditAllowed()>
+                            <a [routerLink]="['/agentEdit',user.agent.id]">
+                                <div class="btn btn-dark container-fluid"><i class="material-icons">
+                                        edit
+                                    </i>Edit</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>

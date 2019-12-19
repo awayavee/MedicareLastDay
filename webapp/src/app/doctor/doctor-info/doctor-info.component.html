@@ -1,0 +1,26 @@
+<div class="card testimonial-card mt-2 mb-3">
+        
+        <img class="card-img-top rounded-circle"
+            [src]="doctorImg[user.doctor.id%7]">
+
+        <div class="card-body">
+            <h4 class="card-title font-weight-bold">Dr. {{user.doctor.firstName}}</h4>
+            <hr>
+            <div class="card-text">
+                <p><i class="fas fa-quote-left"></i> An experienced doctor in the field of {{user.doctor.speciality}}</p>
+                <p>Medicare Service: {{user.doctor.medicareServices.medicareService}}</p>
+                <p>Working Hour : {{user.doctor.workHours}}</p>
+                <p>Hospital Name : {{user.doctor.hospitalName}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a [routerLink]="['/appointment',user.doctor.id]" *ngIf="!isEditAllowed()" >
+                <div class="btn btn-dark container-fluid">Book Appointment</div>
+            </a>
+            <a [routerLink]="['/doctorEdit',user.doctor.id]" *ngIf="isEditAllowed()">
+                    <div class="btn btn-info container-fluid">Edit</div>
+                </a>
+                 
+        </div>
+
+    </div>

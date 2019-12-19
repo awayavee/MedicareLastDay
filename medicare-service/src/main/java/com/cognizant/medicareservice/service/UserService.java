@@ -9,6 +9,10 @@ public List<User> getAllUsers();
 
 public void modifyStatus(int id);
 
-public List<User> getActiveUsers(boolean status);
+public List<User> getActivePatients(boolean status);
+
+public List<User> getActiveDoctors(boolean status);
+
+public List<User> getActiveAgents(boolean status);
 
 }

@@ -48,9 +48,17 @@ public class MedicareController {
 	public List<User> getAllUsers() {
 		return userService.getAllUsers();
 	}
-	@GetMapping("/users/{status}")
-	public List<User> getActiveUsers(@PathVariable boolean status) {
-		return userService.getActiveUsers(status);
+	@GetMapping("/users/patients/{status}")
+	public List<User> getActivePatients(@PathVariable boolean status) {
+		return userService.getActivePatients(status);
+	}
+	@GetMapping("/users/doctors/{status}")
+	public List<User> getActiveDoctors(@PathVariable boolean status) {
+		return userService.getActiveDoctors(status);
+	}
+	@GetMapping("/users/agents/{status}")
+	public List<User> getActiveAgents(@PathVariable boolean status) {
+		return userService.getActiveAgents(status);
 	}
 	@PutMapping("/users/{id}")
 	public void modifyStatus(@PathVariable int id)
