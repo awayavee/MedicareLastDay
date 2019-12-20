@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { User } from '../model/user.model';
+import { Router } from '@angular/router';
 
 @Injectable ({
     providedIn:'root'
@@ -10,12 +11,12 @@ export class UserAuthService{
     loggedIn:boolean;
     
     role:string;
-    redirectUrl:'/';
+    redirectUrl=[];
     token:string;
     user:string;
 
 
-    constructor(){}
+    constructor(private router:Router){}
 
   
 
@@ -46,7 +47,7 @@ export class UserAuthService{
    
 
     logOut(){
-        this.redirectUrl='/';
+        this.redirectUrl=["/login"];
         this.user=null;
         this.role=null;
         this.loggedIn=false;
